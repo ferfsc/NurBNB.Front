@@ -1,0 +1,549 @@
+﻿.login_body {
+    /*background-color: #00183e;*/
+    background-color: white;
+    color: #fff;
+}
+.fondo_login {
+    /* background-color: #03224f;*/
+    background-color: white;
+}
+.mensaje_out {
+    border-radius: 7px;
+    border: 1px solid white;
+}
+
+.borde_verde {
+    border-bottom: 1px solid #36B7C1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.borde_gris {
+    border-bottom: 1px solid gray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.titulo_login{
+    font-size: 24px;
+}
+.btnConsejos {
+    font-size: 15px;
+    border-radius: 7px;
+    border: 1px solid #042352;
+}
+.il_zona_segura {
+    background-image: url('../../Slices/icon_zona_segura.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding-right: 25px;
+    padding-top: 10px;
+}
+.cabecera_top {
+    /* height: 128px;*/
+    height: 93px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background: url(../../Slices/bg_head.png) no-repeat;*/
+    background: url(../../imagenes/banner.png) no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.cabecera_top_popup {
+    height: 108px;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(../../imagenes/banner.png) no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.cabecera_top_login {
+    height: 128px;
+    /*max-width: 960px;*/
+    margin-left: auto;
+    margin-right: auto;
+    background: url(../../imagenes/banner.png) no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+
+.cabecera {
+    border-bottom: 1px solid #CFCFD1;
+    padding: 9px 0;
+    width: 100%;
+    /*background: url(../../imagenes/mainnav-bg.png) top;*/
+}
+
+.logo_fassil {
+    background-image: url("../../Slices/logo_fassil_escritorio.png");
+    background-repeat: no-repeat;
+    height: 55px;
+    width: 260px;
+    margin-left: 25px;
+    margin-top: 35px;
+}
+
+.logo_fassil_net {
+    background-image: url("../../Slices/logo_fassil_net.png");
+    background-repeat: no-repeat;
+    height: 76px;
+    width: 196px;
+    margin: 25px 25px 0;
+}
+
+.cabecera_texto {
+    color: #FFFFFF !important;
+    /*    font-family: 'OpenSansBold';*/
+    font-family: Calibri;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.button-toogle {
+    margin: 20px 25px 0;
+    border: #fff 2px solid;
+    padding: 8px 12px;
+}
+
+.button-toogle path {
+    fill: #fff;
+}
+
+.button-toogle-tablet {
+    border: #fff 2px solid;
+    padding: 4px 12px;
+}
+
+.button-toogle-tablet path {
+    fill: #36B7C1;
+}
+
+.no_index .texto_token {
+    color: #ffffff !important;
+}
+
+.texto_token {
+    color: #333 !important;
+}
+
+.texto_gris {
+    color: #848484 !important;
+}
+.texto_blanco {
+    color: #fff !important;
+}
+.texto_gris {
+    color: gray !important;
+}
+
+.texto_blanco path {
+    fill: #fff !important;
+}
+.texto_verde {
+    color: #36B7C1 !important;
+}
+.texto_verde path {
+    fill: #36B7C1 !important;
+}
+.texto_azul {
+    color: #042352 !important;
+}
+.texto_azul path {
+    fill: #042352 !important;
+}
+
+.texto_gris {
+    color: #848484 !important;
+}
+.texto_small {
+    font-size: 0.9em !important;
+}
+
+.texto_12 {
+    font-size: 12px !important;
+}
+
+.texto_14 {
+    font-size: 14px !important;
+}
+
+.texto_15 {
+    font-size: 15px !important;
+}
+.texto_16 {
+    font-size: 16px !important;
+}
+.texto_18 {
+    font-size: 18px !important;
+}
+@media (max-width: 959px) {
+    .texto_18 {
+        font-size: 17px !important;
+    }
+}
+.texto_22 {
+    font-size: 22px !important;
+}
+.texto_26 {
+    font-size: 26px !important;
+}
+
+.texto_Bold {
+    /*font-family: 'OpenSansBold';*/
+    font-family:Calibri;
+}
+
+.texto_semiBold {
+    /*font-family: 'OpenSansSemiBold';*/
+    font-family: Calibri;
+}
+.nro_notificaciones_smart {
+    color: #FFFFFF;
+    /*font-family: 'OpenSans';*/
+    font-family: Calibri;
+    font-size: 11px;
+    margin: 0;
+    padding-left: 24px;
+    position: absolute;
+    width: 15px;
+    margin-top: -31px;
+}
+
+.titulos {
+    border-bottom: 1px solid #042352;
+    /*color: #042352;*/
+    color: gray;
+    /*font-family: 'OpenSansBold';*/
+    font-family: Calibri;
+    font-size: 26px;
+    margin-top: 0 !important;
+    padding-top: 10px;
+}
+
+.titulos_secundarios {
+    /*border-bottom: 1px solid #042352;
+    color: #042352;*/
+    border-bottom: 1px solid gray;
+    color: gray;
+    /*font-family: 'OpenSans';*/
+    font-family: Calibri;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0 !important;
+    padding-top: 7px;
+}
+
+.trSubTitulo th {
+    /*background-color: #36B7C1;*/
+    background-color: gray;
+    color: #FFFFFF;
+    font-weight: normal;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.nro_notificaciones_tablet {
+    color: #FFFFFF;
+    font-size: 11px;
+    margin: -29px 0 0;
+    padding-left: 73px;
+    position: absolute;
+    width: 15px;
+}
+
+.footer {
+    /*background-color: #36b7c1;*/
+    background-color: gray;
+    /*color: white;*/
+    color: #fff;
+    text-align: center;
+    font-size: 9pt;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+/* scroll*/
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(51, 51, 51, .2);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+/* end scroll*/
+
+.nav {
+    list-style: none outside none;
+    background-color: white;
+}
+
+.div-item-nav > a {
+    display: block;
+    text-decoration: none;
+}
+
+@media (max-width: 639px) {
+    .cabecera_top {
+        background-image: url(../../Imagenes/cabecera_smartphone.png);
+        background-size: 100% 291px;
+        height: 291px;
+        background-position: center;
+    }
+    .titulo_login{
+        font-size: 21px;
+    }
+
+    .il_zona_segura {
+        padding-top: 0;
+    }
+    .cabecera_top_login {
+        background-image: url(../../Slices/iphne_v2.png);
+        background-size: 100% 72px;
+        background-position: center;
+        height: 72px;
+    }
+    .titulo_cabecera {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .encabezado_smart_middle {
+        padding-top: 5px;
+        height: 165px;
+    }
+
+    .encabezado_smart_bottom {
+        height: 40px;
+    }
+
+    .logo_fassil_net {
+        background-image: url(../../Slices/logo_fassil_net_tablet.png);
+        background-repeat: no-repeat;
+        height: 68px;
+        margin: 10px 10px 0;
+        width: 167px;
+        background-size: contain;
+    }
+    .logo_fassil {
+        background-image: url(../../Slices/logo_fassil_smart.png);
+        background-position: 0 10px;
+        background-repeat: no-repeat;
+        float: none;
+        height: 62px;
+        margin: 0 auto;
+        width: 203px;
+    }
+
+    .encabezado_smart_bottom .uk-navbar-nav > li > a {
+        min-height: 40px;
+        height: 40px;
+    }
+}
+
+#panelDatosTransferencia {
+    margin-left: 0 !important;
+}
+.ConfirmacionContenedor{
+    border: 1px solid #042352;
+    border-radius: 7px;
+}
+.ConfirmacionCabecera {
+    background-color: #F7F6F2;
+    border-radius: 7px 7px 0 0;
+    border-bottom: 1px solid #042352;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+.titulos_confirmaciones {
+    color: #042352;
+    font-size: 20px;
+}
+
+.ConfirmacionCuerpo {
+    padding-bottom: 25px;
+    font-size: 15px;
+    color: #042352;
+}
+
+/*bloqueo IE10- */
+.ie-old #il_datos_usuario {
+    display: none;
+}
+.ie-old #LabelErr {
+    margin: 2% 20%;
+    height: auto;
+    display: block;
+    text-align: center;
+}
+#LabelErr {
+    display: none;
+}
+/* end */
+
+@media (min-width: 640px) {
+    td.last_transactions .img_desplegar {
+        background: url('../../Imagenes/icon_expandir.png') no-repeat left center;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        padding-left: 20px;
+        display: inline;
+    }
+
+    tr.shown td.last_transactions .img_desplegar {
+        background: url('../../Imagenes/icon_colapsar.png') no-repeat left center;
+    }
+}
+
+.icono_ayuda {
+    background: url('../../Slices/icono.png') no-repeat left center;
+    width: 33px;
+    height: 28px;
+    cursor: pointer;
+    padding-left: 33px;
+    display: inline;
+    background-size: contain;
+}
+
+.icono_excel {
+	background: url('../../Slices/excel.ico') no-repeat left center;
+	width: 33px;
+	height: 28px;
+	cursor: pointer;
+	padding-left: 33px;
+	display: inline;
+	background-size: contain;
+}
+
+.datos_labels {
+    font-size: 15px;
+    color: #042352;
+    font-weight: normal;
+}
+
+/*select 2 theme */
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #848484;
+    border-radius: 7px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #848484;
+}
+
+:focus {
+    outline: none;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #042352;
+    color: white;
+}
+
+li.last > a {
+    border-bottom: none;
+}
+
+.checkbox > input[type="checkbox" i], .radio > input[type="radio" i] {
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 0;
+    font: inherit
+}
+
+.checkbox > input[type="checkbox" i], .radio > input[type="radio" i] {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    margin-top: -4px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border: 1px solid #ccc;
+    transition: .2s ease-in-out;
+    transition-property: background-color, border
+}
+
+.radio > input[type="radio" i] {
+    border-radius: 50%
+}
+
+.checkbox:focus > input[type="checkbox" i], .radio:focus > input[type="radio" i] {
+    outline: 0;
+    border-color: #36B7C1
+}
+
+.checkbox > input[type="checkbox" i]:checked, .checkbox > input[type="checkbox" i]:indeterminate, .radio > input[type="radio" i]:checked {
+    background-color: #36B7C1;
+    border-color: transparent
+}
+.checkbox.pending > input[type="checkbox" i]:checked, .checkbox.pending > input[type="checkbox" i]:indeterminate{
+    background-color: #333333 !important
+}
+
+.checkbox > input[type="checkbox" i]:checked:focus, .checkbox > input[type="checkbox" i]:indeterminate:focus, .radio > input[type="radio" i]:checked:focus {
+    background-color: #36B7C1
+}
+
+.radio > input[type="radio" i]:checked {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E")
+}
+
+.checkbox > input[type="checkbox" i]:checked {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A")
+}
+
+.checkbox > input[type="checkbox" i]:indeterminate {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E")
+}
+
+.checkbox > input[type="checkbox" i]:disabled, .radio:disabled {
+    background-color: #f8f8f8;
+    border-color: #939498
+}
+
+.radio > input[type="radio" i]:disabled:checked {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23939498%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E")
+}
+
+.checkbox > input[type="checkbox" i]:disabled:checked {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23939498%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A")
+}
+
+.checkbox > input[type="checkbox" i]:disabled:indeterminate {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23939498%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E")
+}
+.checkbox> input[type="checkbox" i]:not(:disabled), .radio > input[type="radio" i]:not(:disabled) {
+    cursor: pointer;
+}
+.checkbox> input[type="checkbox" i]:focus, .radio > input[type="radio" i]:focus {
+    outline: 0;
+    border-color: #36B7C1;
+}
+.uk-modal-container-medium .uk-modal-dialog {
+    width: 800px;
+}

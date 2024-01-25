@@ -1,0 +1,273 @@
+﻿*:focus {
+       outline: none;
+    }
+
+#n1 {
+ background-image:url('../../letras/teclado-01.png');
+}
+
+#n2 {
+ background-image:url('../../letras/teclado-02.png');
+}
+
+#n3 {
+ background-image:url('../../letras/teclado-03.png');
+}
+
+#n4 {
+ background-image:url('../../letras/teclado-04.png');
+}
+
+#n5 {
+ background-image:url('../../letras/teclado-05.png');
+}
+
+#n6 {
+ background-image:url('../../letras/teclado-06.png');
+}
+
+#n7 {
+ background-image:url('../../letras/teclado-07.png');
+}
+
+#n8 {
+ background-image:url('../../letras/teclado-08.png');
+}
+
+#n9 {
+ background-image:url('../../letras/teclado-09.png');
+}
+
+#n0 {
+ background-image:url('../../letras/teclado-10.png');
+}
+
+
+#t1 {
+ background-image:url('../../Imagenes/01.png');
+}
+
+#t2 {
+ background-image:url('../../Imagenes/02.png');
+}
+
+#t3 {
+ background-image:url('../../Imagenes/03.png');
+}
+
+#t4 {
+ background-image:url('../../Imagenes/04.png');
+}
+
+#t5 {
+ background-image:url('../../Imagenes/05.png');
+}
+
+#t6 {
+ background-image:url('../../Imagenes/06.png');
+}
+
+#t7 {
+ background-image:url('../../Imagenes/07.png');
+}
+
+#t8 {
+ background-image:url('../../Imagenes/08.png');
+}
+
+#t9 {
+ background-image:url('../../Imagenes/09.png');
+}
+
+#t0 {
+ background-image:url('../../Imagenes/00.png');
+}
+
+
+#q {
+ background-image:url('../../letras/02-01.png');
+}
+
+#w {
+ background-image:url('../../letras/02-02.png');
+}
+
+#e {
+ background-image:url('../../letras/02-03.png');
+}
+
+#r {
+ background-image:url('../../letras/02-04.png');
+}
+
+#t {
+ background-image:url('../../letras/02-05.png');
+}
+#y {
+ background-image:url('../../letras/02-06.png');
+}
+#u {
+ background-image:url('../../letras/02-07.png');
+}
+#i {
+ background-image:url('../../letras/02-08.png');
+}
+#o {
+ background-image:url('../../letras/02-09.png');
+}
+#p {
+ background-image:url('../../letras/02-10.png');
+}
+#a {
+ background-image:url('../../letras/02-11.png');
+}
+
+#s {
+ background-image:url('../../letras/02-12.png');
+}
+
+#d {
+ background-image:url('../../letras/02-13.png');
+}
+
+#f {
+ background-image:url('../../letras/02-14.png');
+}
+
+#g {
+ background-image:url('../../letras/02-15.png');
+}
+#h {
+ background-image:url('../../letras/02-16.png');
+}
+#j {
+ background-image:url('../../letras/02-17.png');
+}
+#k {
+ background-image:url('../../letras/02-18.png');
+}
+#l {
+ background-image:url('../../letras/02-19.png');
+}
+
+#ñ {
+ background-image:url('../../letras/02-20.png');
+}
+
+#z {
+ background-image:url('../../letras/02-21.png');
+}
+
+#x {
+ background-image:url('../../letras/02-22.png');
+}
+#c {
+ background-image:url('../../letras/02-23.png');
+}
+#v {
+ background-image:url('../../letras/02-24.png');
+}
+#b {
+ background-image:url('../../letras/02-25.png');
+}
+#n {
+ background-image:url('../../letras/02-26.png');
+}
+#m {
+ background-image:url('../../letras/02-27.png');
+}
+
+#coma {
+ background-image:url('../../letras/teclado-fassil original-38.png');
+}
+
+#punto {
+ background-image:url('../../letras/teclado-fassil original-39.png');
+}
+
+#guion {
+ background-image:url('../../letras/teclado-fassil original-41.png');
+}
+
+#shift {
+    background-image:url('../../letras/teclado-38.png');
+}
+
+.letra {
+    width:20px;
+    height:20px;
+    float:left;
+    margin:1px;
+    cursor:pointer;
+}
+
+.nro {
+    width:30px;
+    height:30px;
+    float:left;
+    margin:1px;
+    cursor:pointer;
+}
+
+    /*#idTecladoNumerico .letra:hover  {
+        background-image:url('../../letras/01-04.png');
+    }*/
+
+    /*#idTecladoNumerico:hover > .nro{
+        background-image:url('../../Imagenes/asterisco.png');
+    }
+    #idTecladoNumerico > .nro:hover {
+        background-image:url('../../Imagenes/asterisco.png');
+    }*/
+
+#borrar {
+    float:left;
+    width:42px;
+    height:20px;
+    background-image:url('../../letras/teclado-39.png');
+    margin:1px;
+    cursor:pointer;
+}
+
+#borrar_nro {
+    float:left;
+    width:62px;
+    height:30px;
+    background-image:url('../../Imagenes/Borrar.png');
+    margin:1px;
+    cursor:pointer;
+}
+
+#espacio {
+    background-image: url('../../letras/teclado-fassil original-44.png');
+    float: left;
+    height: 20px;
+    margin: 1px;
+    width: 152px;
+    cursor:pointer;
+}
+
+#keyboard {
+    height: 120px;
+    list-style: none outside none;
+    margin: 10px auto;
+    padding: 0;
+    width: 220px;
+}
+
+#txt_teclado {
+    width:210px;
+    font-family:'segoeregular';
+    font-size:15px;
+    margin:10px;
+    font-weight: normal;
+}
+
+.teclado_numerico {
+    height: 130px;
+    list-style: none outside none;
+    padding: 0;
+    width: 100px;
+    float:left;
+    margin-bottom:0;
+}
