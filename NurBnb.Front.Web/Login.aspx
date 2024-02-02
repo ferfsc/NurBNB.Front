@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Inicio.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="NurBnb.Front.Web.Login" %>
+﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/Inicio.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="NurBnb.Front.Web.Login" %>
 
 
 <asp:Content ID="Content" ContentPlaceHolderID="head" runat="server">
@@ -55,8 +55,9 @@
                             <asp:Label ID="lblUsuario" CssClass="uk-form-label texto_15 texto_gris" runat="server">Código de usuario:</asp:Label>
 
                             <div class="uk-inline uk-form-controls uk-width-1-1">
-                                <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: fa-solid-eye" onclick="mostrar(this,'<%= txtUsuario.ClientID %>','Usuario')" uk-tooltip="Mostrar Usuario"></a>
-                                <asp:TextBox ID="txtUsuario" CssClass="uk-input uk-form-small alphanumerico" TextMode="Password" TabIndex="1" AutoCompleteType="Disabled" runat="server" />
+                                <%--<a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: fa-solid-eye" onclick="mostrar(this,'<%= txtUsuario.ClientID %>','Usuario')" uk-tooltip="Mostrar Usuario"></a>--%>
+                                <a class="uk-form-icon uk-form-icon-flip" href="#"  uk-tooltip="Mostrar Usuario"></a>
+                                <asp:TextBox ID="txtUsuario" CssClass="uk-input uk-form-small " Text="admin@fake.com"  TabIndex="1"  runat="server" />
                             </div>
 
                         </div>
@@ -65,7 +66,7 @@
                             <asp:Label ID="lblContrasena" CssClass="uk-form-label texto_15 texto_gris" runat="server">Clave de acceso:</asp:Label>
                             <div class="uk-inline uk-form-controls uk-width-1-1">
                                 <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: fa-solid-eye" onclick="mostrar(this,'<%= txtPassword.ClientID %>','Contraseña')" uk-tooltip="Mostrar Contraseña"></a>
-                                <asp:TextBox ID="txtPassword" CssClass="uk-input uk-form-small alphanumerico" TextMode="Password" TabIndex="2" AutoCompleteType="Disabled" runat="server" />                                
+                                <asp:TextBox ID="txtPassword" CssClass="uk-input uk-form-small " TabIndex="2" Text="admin@123"  runat="server" />                                
                             </div>
                         </div>
                          <% if (!String.IsNullOrEmpty(lblMensajeError.Text))

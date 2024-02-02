@@ -1,0 +1,293 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="NurBnb.Front.Web.Index" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+
+    <meta content="max-age=0" http-equiv="cache-control"/>
+    <meta content="no-cache" http-equiv="cache-control"/>
+    <meta content="0" http-equiv="expires"/>
+    <meta content="Tue, 01 Jan 1980 1:00:00 GMT" http-equiv="expires"/>
+    <meta content="no-cache" http-equiv="pragma"/>
+
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11,edge"/>
+
+    <title>Corvic - Siscon</title>
+
+    <link rel="shortcut icon" href="Imagenes/favicon.png"/>
+    <link href="assets/css/fuentes.min.css" rel="stylesheet"/>
+    <%-- css framework uikit v3 --%>
+    <link href="assets/css/uikit.css" rel="stylesheet"/>
+    <link href="assets/css/uikit.theme.css" rel="stylesheet"/>
+    <link href="assets/css/metismenujs.css" rel="stylesheet"/>
+    <link href="assets/css/dataTables.uikit.css" rel="stylesheet"/>
+    <link href="assets/css/select2.min.css" rel="stylesheet"/>
+
+    <%-- css personalizadas --%>
+    <link href="assets/css/style.css" rel="stylesheet"/>
+
+    <%-- css framework uikit v3 --%>
+    <script src="assets/js/uikit.min.js"></script>
+    <script src="assets/js/uikit-icons.min.js"></script>
+    <script src="assets/js/uikit-fa-all-icons.min.js"></script>
+    <%-- <script src="assets/js/jquery-1.8.3.min.js"></script> --%>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.migrate-3.3.2.min.js"></script>
+
+    <%-- js framework datatables.js --%>
+    <script src="assets/js/metismenujs.min.js"></script>
+    <script src="assets/js/datatables.min.js"></script>
+    <script src="assets/js/dataTables.uikit.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script>
+    <script src="assets/js/jquery.blockUI.min.js"></script>
+    <%-- js personalizadas --%>
+    <script src="assets/js/script.js"></script>
+
+    <script type="text/javascript">
+$(document).ready(function () {
+
+    // async
+Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+function EndRequestHandler(sender, args)
+{
+  if (args.get_error() != undefined)
+   {
+       if(args.get_error().name === 
+		'Sys.WebForms.PageRequestManagerTimeoutException')
+       {
+             let err =args.get_error().message;
+               let txt = err.split(":")[1];
+           alert(txt);
+           closeLoading();
+           args.set_errorHandled(true);
+       }
+       else
+       {
+           // not this kind of error so let the default behavior happen.
+       }
+   }
+}
+
+});
+
+        function scrolltop() {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+            }
+        function redireccionar() {
+            bloqueo();
+            location.href = '<%= Page.ResolveUrl("~/AutorizacionesPendientes.aspx") %>';
+        }
+
+        function BlockMaster(control) {
+            var hr = $(control).attr("href");
+            if (hr !== "#") {
+                bloqueo()
+            }
+        }
+        if (window.history) {
+            function noBack() { window.history.forward() }
+            noBack();
+            window.onload = noBack;
+            window.onpageshow = function (evt) { if (evt.persisted) noBack() }
+            window.onunload = function () { void (0) }
+        }
+          $(document).ready(function() {
+               $("#nav1").metisMenu();
+               $("#nav2").metisMenu();
+               $("#nav3").metisMenu();
+         //   $('.uk-select').select2({
+         //    width: '100%',
+         //     minimumResultsForSearch: '<= ConfigurationManager.AppSettings["MaximoCombo"].ToString() %>'
+         //    });
+          });
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+<form id="form1" runat="server" autocomplete="off" method="post" class="uk-height-1-1" novalidate>
+    <div id="Block_div" style="width: 100%; display: none;"></div>
+    <div class="uk-container">
+
+        <asp:ScriptManager ID="scpGeneral" runat="server" AsyncPostBackTimeout="36000" ></asp:ScriptManager>
+        <div class="cabecera_top uk-grid-collapse" uk-grid>
+            <div class="uk-width-1-2 uk-visible@s">                
+            </div>
+            <div class="uk-width-1-2 uk-visible@s">
+                <div class="uk-float-right">
+                    
+                    <div id="opciones_header" class="cabecera_texto uk-text-right" style="margin-right: 25px">
+                    
+                        <asp:LinkButton runat="server" ID="salir" OnClick="salir_Click" OnClientClick="bloqueo()" CssClass="cabecera_texto uk-width-auto">Salir</asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+
+            <div id="encabezado_smart" class="uk-width-1-1 uk-hidden@s">
+                <div class="encabezado_smart_top uk-grid-small" uk-grid>
+                    <div class="uk-width-auto">
+                        <button class="uk-icon button-toogle" uk-icon="icon: fa-solid-bars" href="#" type="button"></button>
+                        <div uk-dropdown="pos: bottom-justify; boundary: .boundary-align; boundary-align: true" id="nav_smart" runat="server">
+                        </div>
+                    </div>
+                    <div class="uk-width-expand">
+                        <div class="logo_fassil_net uk-float-right"></div>
+                    </div>
+                </div>
+                <div class="encabezado_smart_middle uk-margin-small-left uk-margin-small-right">
+                    <div id="cliente_smart" class="uk-margin-remove texto_12 texto_blanco">
+                        <span>Bienvenido:</span>
+                        <br/>
+                        <span class="texto_Bold" id="sCliente" runat="server"></span>
+                        <br/>
+                        <span>Representante:</span>
+                        <br/>
+                        <span class="texto_Bold" id="sRepresentante" runat="server"></span>
+                    </div>
+                    <div id="tasa_compra_smart" class="uk-margin-remove uk-text-center texto_14 texto_blanco">
+                        Tasa compra dólar:
+                        <asp:Label ID="lblTCDSmart" runat="server"/><br/>
+                        Tasa venta dólar:
+                        <asp:Label ID="lblTVDSmart" runat="server"/><br/>
+                        Valor UFV:
+                        <asp:Label ID="lblUFVSmart" runat="server"/>
+                    </div>
+                    <div id="fecha_hora_smart" class="uk-margin-remove uk-text-center texto_14 texto_blanco">
+                        Fecha:
+                        <asp:Label ID="slbFecha" runat="server"/><br/>
+                        Hora:
+                        <asp:Label ID="slbHora" runat="server"/><strong style="margin: 0 5px">|</strong>
+                        Vence sesión:
+                        <asp:Label ID="slbVence" runat="server"/>
+                    </div>
+                </div>
+                <div class="encabezado_smart_bottom">
+                    <div class="uk-flex uk-flex-center uk-flex-middle">
+                        <div class="">
+                            <a>
+                                <img id="notiSmart" src="Slices/icon_notificaciones_smart.png" onclick="redireccionar()" runat="server" visible="false" alt="LogoSmart"/>
+                                <h2 id="nro_notificaciones_smart" class="nro_notificaciones_smart" runat="server"></h2>
+                            </a>
+                        </div>
+                        <div class=" uk-margin-left">
+                            <a>
+                                <img src="Slices/icon_zona_segura_smart.png" class="iconos_cabecera_smart" alt="zonaSeguraSmart"/>
+                            </a>
+                        </div>
+                        <div class=" uk-margin-left">
+                            <asp:LinkButton runat="server" OnClick="contact_Click" OnClientClick="bloqueo()">
+                                <img src="Slices/Contactanos.png" class="iconos_cabecera_smart" alt="Contactenos"/>
+                            </asp:LinkButton>
+                        </div>
+                        <div class=" uk-margin-left">
+                            <asp:LinkButton runat="server" OnClick="salir_Click" CssClass="texto_blanco texto_15">Salir</asp:LinkButton>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="uk-navbar-dropbar"></div>
+            </div>
+        </div>
+        <div id="contenedor" uk-grid class="uk-grid-collapse">
+            <div class="uk-width-1-1">
+                <div uk-grid class="uk-grid-small">
+                    <div class="uk-width-auto@s uk-visible@m">
+                        <div id="navegador" class="">
+                            <div id="notificaciones" runat="server" visible="false" class="div-item-nav">                                
+                                <asp:LinkButton runat="server" OnClientClick="BlockMaster(this)" style="background-image: none;">Notificaciones
+                                <span id="nro_notificaciones" runat="server" class="uk-badge"></span>
+
+                                </asp:LinkButton>
+                            </div>
+                            
+                            <div id="nav" runat="server">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uk-width-expand@s ">                       
+
+                        <div id="segunda_cabecera_1" class="cabecera uk-visible@s">
+                            <div uk-grid class="uk-grid-small">
+                                <div id="menu_tablet" class="uk-hidden@m uk-width-1-1">
+                                    <div uk-grid>
+                                        <div class="uk-width-auto">
+                                            <button class="uk-icon button-toogle-tablet" uk-icon="icon: fa-solid-bars" href="#" type="button"></button>
+                                            <div uk-dropdown="{mode: click; }" id="nav_tablet" runat="server">
+                                            </div>
+                                            <img id="icNotTablet" src="Slices/icon_notificaciones_tablet.png" onclick="redireccionar()" runat="server" visible="false"/>
+                                            <h2 id="nro_notificaciones_tablet" runat="server" class="nro_notificaciones_tablet"></h2>
+                                        </div>
+                                        <div class="uk-width-expand">
+                                            <span class="texto_bienvenida">Bienvenido:&nbsp;</span>
+                                            <span id="tCliente" runat="server" class="texto_semiBold"></span>
+                                            <br/>
+                                            <span class="texto_bienvenida">Representante:&nbsp;</span>
+                                            <span id="tRepresentante" runat="server" class="texto_semiBold"></span>
+                                        </div>
+                                        <div class="uk-width-1-1 uk-margin-remove">
+                                            <div class="cabecera uk-padding-remove-top" style="margin-bottom: -6px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="NombresUsuarios" class="texto_cabecera uk-width-expand@s texto_14 uk-visible@m ">
+                                    <span class="texto_bienvenida">Bienvenido:</span>&nbsp;
+                                    <span id="hCliente" runat="server" class="texto_semiBold"></span>
+                                    <br/>
+                                    <span class="texto_bienvenida">Correo:</span>&nbsp;
+                                    <span id="hRepresentante" runat="server" class="texto_semiBold"></span>
+                                </div>
+                                <div id="fecha_hora" class="texto_cabecera uk-width-1-1@s uk-width-auto@m uk-text-right@m texto_14">
+                                    <div class="uk-margin-small-right">
+                                        Fecha:
+                                        <strong>
+                                            <asp:Label ID="lblFecha" runat="server"/>
+                                        </strong>
+                                        <strong style="margin: 0 5px">|</strong>
+                                        Hora:
+                                        <strong>
+                                            <asp:Label ID="lblHora" runat="server"/>
+                                        </strong>
+                                        <strong style="margin: 0 10px" class="uk-hidden@m">|</strong>
+                                        <br class="uk-visible@m"/>
+                                       <%-- Empresa:
+                                        <strong>
+                                            <asp:Label ID="lblEmpresa" runat="server"/>
+                                        </strong>--%>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+                            <div class="uk-offcanvas-bar">
+                                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                            </div>
+                        </div>
+
+                        <div class="cuerpo_holder">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="FooterPC" class="uk-width-1-1@s footer uk-margin-small-top">
+                <span>©NurBNB S.R.L. - Todos los Derechos Reservados</span>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+</body>
+</html>

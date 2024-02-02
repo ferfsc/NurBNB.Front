@@ -44,7 +44,7 @@
     margin-left: auto;
     margin-right: auto;
     /*background: url(../../Slices/bg_head.png) no-repeat;*/
-    background: url(../../imagenes/banner.png) no-repeat;
+    background: url(../../assets/img/banner.png) no-repeat;
     background-position: right;
     background-size: cover;
 }
@@ -52,7 +52,7 @@
     height: 108px;
     margin-left: auto;
     margin-right: auto;
-    background: url(../../imagenes/banner.png) no-repeat;
+    background: url(../../assets/img/banner.png) no-repeat;
     background-position: right;
     background-size: cover;
 }
@@ -61,7 +61,7 @@
     /*max-width: 960px;*/
     margin-left: auto;
     margin-right: auto;
-    background: url(../../imagenes/banner.png) no-repeat;
+    background: url(../../assets/img/banner.png) no-repeat;
     background-position: right;
     background-size: cover;
 }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using NurBnb.Front.Web.Controles;
 using NurBnbFront.Infrastructure;
 using NurBnb.Front.Web.AppCode;
+using Newtonsoft.Json;
 
 namespace NurBnb.Front.Web
 {
@@ -59,7 +60,7 @@ namespace NurBnb.Front.Web
 
         }
 
-        protected void btnContinuarLogin_Click(object sender, EventArgs e)
+        protected async void btnContinuarLogin_Click(object sender, EventArgs e)
         {
 
             try
@@ -67,15 +68,16 @@ namespace NurBnb.Front.Web
 
                 ValidarDatos();
                 NurBnbFront.Infrastructure.InicioLogin objLogin = new NurBnbFront.Infrastructure.InicioLogin();
-                objLogin.UsrLogin = txtUsuario.Text;                
+                objLogin.UsrLogin =  txtUsuario.Text;                
                 objLogin.UsrPassword = txtPassword.Text.Trim();
 
-                objLogin = objLogin.InicioSession();
+                //Conexion.Token token = await objLogin.InicioSession(txtUsuario.Text, txtPassword.Text);
+                Conexion.Token token = await objLogin.InicioSession("admin@fake.com", "admin@123");
 
-                if (objLogin.esUsuario)
+                if (token != null && token.jwt != null && token.jwt.Length > 0)
                 {
                     Sesion.Login = objLogin;
-                    Response.Redirect("frmPrincipal.aspx", false);
+                    Response.Redirect("Principal.aspx", false);
                 }
                 else
                     lblMensajeError.Text = "Ingreso invalido.";

@@ -5,6 +5,12 @@ using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI;
+using Newtonsoft.Json.Linq;
+using System.Runtime.Remoting.Messaging;
+using Newtonsoft.Json;
+using System.IO;
+using System.Configuration;
+using System.Text;
 
 namespace NurBnb.Front.Web.AppCode
 {
@@ -123,5 +129,14 @@ namespace NurBnb.Front.Web.AppCode
                     CleanControl(control.Controls);
             }
         }
-    }
+
+        public static JObject Lenguaje(string valor)
+        {
+            JObject languaje;
+            string path = ""; //ConfigurationManager.AppSettings["rutaWebConfig"];
+            path = Path.Combine(path, "Menu.json");            
+            languaje = JObject.Parse(File.ReadAllText(path, Encoding.UTF8));
+            return (JObject)(languaje[valor] ?? new JObject());
+        }
+    }       
 }
