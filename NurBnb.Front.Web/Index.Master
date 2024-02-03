@@ -241,10 +241,7 @@ function EndRequestHandler(sender, args)
                                 </div>
                                 <div id="NombresUsuarios" class="texto_cabecera uk-width-expand@s texto_14 uk-visible@m ">
                                     <span class="texto_bienvenida">Bienvenido:</span>&nbsp;
-                                    <span id="hCliente" runat="server" class="texto_semiBold"></span>
-                                    <br/>
-                                    <span class="texto_bienvenida">Correo:</span>&nbsp;
-                                    <span id="hRepresentante" runat="server" class="texto_semiBold"></span>
+                                    <span id="hUsuario" runat="server" class="texto_semiBold"></span>                                    
                                 </div>
                                 <div id="fecha_hora" class="texto_cabecera uk-width-1-1@s uk-width-auto@m uk-text-right@m texto_14">
                                     <div class="uk-margin-small-right">

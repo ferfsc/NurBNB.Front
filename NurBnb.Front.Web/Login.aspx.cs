@@ -67,10 +67,8 @@ namespace NurBnb.Front.Web
             {
 
                 ValidarDatos();
-                NurBnbFront.Infrastructure.InicioLogin objLogin = new NurBnbFront.Infrastructure.InicioLogin();
-                objLogin.UsrLogin =  txtUsuario.Text;                
-                objLogin.UsrPassword = txtPassword.Text.Trim();
-
+                InicioLogin objLogin = new InicioLogin();
+                
                 //Conexion.Token token = await objLogin.InicioSession(txtUsuario.Text, txtPassword.Text);
                 Conexion.Token token = await objLogin.InicioSession("admin@fake.com", "admin@123");
 

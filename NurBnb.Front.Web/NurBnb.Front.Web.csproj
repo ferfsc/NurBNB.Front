@@ -155,6 +155,7 @@
     <Content Include="assets\js\uikit.min.js" />
     <Content Include="assets\js\vanilla-masker.min.js" />
     <Content Include="Controles\MensajeAlertas.ascx" />
+    <Content Include="Huesped.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Reservas.aspx" />
@@ -171,6 +172,13 @@
     </Compile>
     <Compile Include="Controles\MensajeAlertas.ascx.designer.cs">
       <DependentUpon>MensajeAlertas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Huesped.aspx.cs">
+      <DependentUpon>Huesped.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Huesped.aspx.designer.cs">
+      <DependentUpon>Huesped.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.Master.cs">
       <DependentUpon>Index.Master</DependentUpon>

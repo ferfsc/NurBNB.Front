@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="NurBnb.Front.Web.Principal" %>
 
-
-
 <asp:Content ID="Header" ContentPlaceHolderID="head" runat="server">
 
     <link href="assets/css/Teclado.css" rel="stylesheet" />
@@ -14,11 +12,6 @@
         function pageLoad() {
             cargar_random();
 
-            <%--$("#<%= cmbHabilitado.ClientID %>").change(function () {
-                bloqueo();
-            });--%>
-
-
         }
     </script>
 </asp:Content>
@@ -28,19 +21,18 @@
         <ContentTemplate>
             <div id="RegistroDatos">
                 <div id="panelDatosTransferencia" class="uk-margin-small">
-                    <div class="uk-margin-large">
-                        <div uk-grid class="uk-grid-small">                            
-                            <div class="uk-width-1-1 uk-flex-center uk-width-1-1@m">
-                                <asp:Image ID="Image1" runat="server" ImageUrl="~/Imagenes/principal_siscon.png" />
-                            </div>
+                    <div class="uk-margin-large">                       
+                        <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+                            sources="srcset: https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?fit=crop&w=650&h=433&q=80; media: (min-width: 1200px)"
+                            data-src="https://images.unsplash.com/photo-1546349851-64285be8e9fa?fit=crop&w=650&h=433&q=80"
+                            uk-img>
+                            <h1>Background Image</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </ContentTemplate>
-
-        <Triggers>
-            <%--<asp:AsyncPostBackTrigger ControlID="btnRegistrar" EventName="Click" />--%>
+        <Triggers>            
         </Triggers>
     </asp:UpdatePanel>
 </asp:Content>

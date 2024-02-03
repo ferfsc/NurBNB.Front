@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NurBnb.Front.Web.AppCode;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -31,8 +32,7 @@ namespace NurBnb.Front.Web
                 {
                     CargarFechas();
                     CargarMenu();
-                    hCliente.InnerText = ""; // Sesion.Login.Nombres + " " + Sesion.Login.Ap_Paterno;
-                    hRepresentante.InnerText = ""; // Sesion.Login.Mail;
+                    hUsuario.InnerText =  Sesion.Login.Nombre;                    
                 }
             }
             catch (Exception ex)
@@ -237,11 +237,14 @@ namespace NurBnb.Front.Web
             //Response.Redirect("Contactenos.aspx");
         }
 
+        #region CARGAR MENU
+
         private string DevolverMenu()
         {
             StringBuilder sbMenu = new StringBuilder();
 
             sbMenu.Append("[  ");
+
             sbMenu.Append("  {");
             sbMenu.Append("    \"idOpcion\": 1,");
             sbMenu.Append("    \"textoOpcion\": \"Reservas\",");
@@ -262,68 +265,9 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"mostrar\": false,");
             sbMenu.Append("    \"pantallaNueva\": \"frmSolicitudCompra.aspx\"");
             sbMenu.Append("  },");
+
             sbMenu.Append("  {");
             sbMenu.Append("    \"idOpcion\": 3,");
-            sbMenu.Append("    \"textoOpcion\": \"Autorizar\",");
-            sbMenu.Append("    \"idOpcionPadre\": 0,");
-            sbMenu.Append("    \"pantalla\": \"#\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"#\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 4,");
-            sbMenu.Append("    \"textoOpcion\": \"Autorizar Solicitud\",");
-            sbMenu.Append("    \"idOpcionPadre\": 3,");
-            sbMenu.Append("    \"pantalla\": \"AutorizarSolicitud.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"AutorizarSolicitud.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 5,");
-            sbMenu.Append("    \"textoOpcion\": \"Parametros\",");
-            sbMenu.Append("    \"idOpcionPadre\": 0,");
-            sbMenu.Append("    \"pantalla\": \"#\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"#\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 6,");
-            sbMenu.Append("    \"textoOpcion\": \"Proyectos\",");
-            sbMenu.Append("    \"idOpcionPadre\": 5,");
-            sbMenu.Append("    \"pantalla\": \"frmBusquedaProyecto.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmBusquedaProyecto.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 8,");
-            sbMenu.Append("    \"textoOpcion\": \"Unidad\",");
-            sbMenu.Append("    \"idOpcionPadre\": 5,");
-            sbMenu.Append("    \"pantalla\": \"frmUnidad.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmUnidad.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 9,");
-            sbMenu.Append("    \"textoOpcion\": \"Material\",");
-            sbMenu.Append("    \"idOpcionPadre\": 5,");
-            sbMenu.Append("    \"pantalla\": \"frmProyecto_Material.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmProyecto_Material.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 11,");
             sbMenu.Append("    \"textoOpcion\": \"Administracion\",");
             sbMenu.Append("    \"idOpcionPadre\": 0,");
             sbMenu.Append("    \"pantalla\": \"#\",");
@@ -333,152 +277,22 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"pantallaNueva\": \"#\"");
             sbMenu.Append("  },");
             sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 12,");
-            sbMenu.Append("    \"textoOpcion\": \"Personal\",");
-            sbMenu.Append("    \"idOpcionPadre\": 11,");
-            sbMenu.Append("    \"pantalla\": \"frmPersonal.aspx\",");
+            sbMenu.Append("    \"idOpcion\": 4,");
+            sbMenu.Append("    \"textoOpcion\": \"Huespedes\",");
+            sbMenu.Append("    \"idOpcionPadre\": 3,");
+            sbMenu.Append("    \"pantalla\": \"Huesped.aspx\",");
             sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
             sbMenu.Append("    \"valido\": true,");
             sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmPersonal.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 13,");
-            sbMenu.Append("    \"textoOpcion\": \"Cargo\",");
-            sbMenu.Append("    \"idOpcionPadre\": 11,");
-            sbMenu.Append("    \"pantalla\": \"frmCargo.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmCargo.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 14,");
-            sbMenu.Append("    \"textoOpcion\": \"Area\",");
-            sbMenu.Append("    \"idOpcionPadre\": 11,");
-            sbMenu.Append("    \"pantalla\": \"frmArea.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmArea.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 15,");
-            sbMenu.Append("    \"textoOpcion\": \"Usuario\",");
-            sbMenu.Append("    \"idOpcionPadre\": 11,");
-            sbMenu.Append("    \"pantalla\": \"frmUsuarios.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmUsuarios.aspx\"");
-            sbMenu.Append("  },");
-          
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 17,");
-            sbMenu.Append("    \"textoOpcion\": \"Opcion Menu\",");
-            sbMenu.Append("    \"idOpcionPadre\": 11,");
-            sbMenu.Append("    \"pantalla\": \"frmOpcion.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmOpcion.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 18,");
-            sbMenu.Append("    \"textoOpcion\": \"Asignar Menu\",");
-            sbMenu.Append("    \"idOpcionPadre\": 11,");
-            sbMenu.Append("    \"pantalla\": \"frmUsuarioOpcion.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmUsuarioOpcion.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 19,");
-            sbMenu.Append("    \"textoOpcion\": \"Fases\",");
-            sbMenu.Append("    \"idOpcionPadre\": 5,");
-            sbMenu.Append("    \"pantalla\": \"Fases.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"Fases.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 20,");
-            sbMenu.Append("    \"textoOpcion\": \"Grupos\",");
-            sbMenu.Append("    \"idOpcionPadre\": 5,");
-            sbMenu.Append("    \"pantalla\": \"frmGrupo.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmGrupo.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 21,");
-            sbMenu.Append("    \"textoOpcion\": \"Modulo\",");
-            sbMenu.Append("    \"idOpcionPadre\": 5,");
-            sbMenu.Append("    \"pantalla\": \"frmModulo.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmModulo.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 22,");
-            sbMenu.Append("    \"textoOpcion\": \"Almacen\",");
-            sbMenu.Append("    \"idOpcionPadre\": 0,");
-            sbMenu.Append("    \"pantalla\": \"#\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"#\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 23,");
-            sbMenu.Append("    \"textoOpcion\": \"Registro de Almacen\",");
-            sbMenu.Append("    \"idOpcionPadre\": 22,");
-            sbMenu.Append("    \"pantalla\": \"frmAlmacen.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmAlmacen.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 24,");
-            sbMenu.Append("    \"textoOpcion\": \"Ingresos Almacen\",");
-            sbMenu.Append("    \"idOpcionPadre\": 22,");
-            sbMenu.Append("    \"pantalla\": \"IngresoMaterial.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"IngresoMaterial.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 25,");
-            sbMenu.Append("    \"textoOpcion\": \"Traspaso de Almacen\",");
-            sbMenu.Append("    \"idOpcionPadre\": 22,");
-            sbMenu.Append("    \"pantalla\": \"TraspasoAlmacen.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"TraspasoAlmacen.aspx\"");
-            sbMenu.Append("  },");
-            sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 26,");
-            sbMenu.Append("    \"textoOpcion\": \"Salida de Almacen\",");
-            sbMenu.Append("    \"idOpcionPadre\": 22,");
-            sbMenu.Append("    \"pantalla\": \"SalidasAlmacen.aspx\",");
-            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
-            sbMenu.Append("    \"valido\": true,");
-            sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"SalidasAlmacen.aspx\"");
+            sbMenu.Append("    \"pantallaNueva\": \"Huesped.aspx\"");
             sbMenu.Append("  }");
+
             sbMenu.Append("]");
 
             return sbMenu.ToString();
 
         }
 
-
+        #endregion
     }
 }
