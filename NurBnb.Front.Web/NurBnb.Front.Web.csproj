@@ -221,15 +221,15 @@
     <Content Include="Inicio.Master" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NurBnbFront.Infrastructure\NurBnbFront.Infrastructure.csproj">
-      <Project>{ed126b80-de3e-46e5-b560-3c2e517a44ca}</Project>
-      <Name>NurBnbFront.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Index.Master" />
     <Content Include="Menu.json" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NurBnbFront.Infrastructure\NurBnbFront.Infrastructure.csproj">
+      <Project>{ed126b80-de3e-46e5-b560-3c2e517a44ca}</Project>
+      <Name>NurBnbFront.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
