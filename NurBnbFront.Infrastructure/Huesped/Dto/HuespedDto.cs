@@ -18,5 +18,6 @@ namespace NurBnbFront.Infrastructure.Huesped.Dto
         public string Ciudad { get; set; }
         public string Pais { get; set; }
         public string CodigoPostal { get; set; }
+        public string NombreCompleto { get; set; }
     }
 }

@@ -38,37 +38,32 @@
                 <div id="cuentas_origen">
                     <ul uk-accordion>
                         <li class="uk-open">
-                            <a class="uk-accordion-title uk-text-center" href="#">Areas</a>
+                            <a class="uk-accordion-title uk-text-center" href="#">Clientes</a>
                             <div class="uk-accordion-content uk-margin-remove-top uk-overflow-auto">
                                 <table class="uk-table uk-table-divider uk-table-hover uk-table-middle uk-table-striped uk-table-small uk-table-responsive cuentasOrigen">
                                     <asp:Repeater ID="rptDatos" runat="server">
                                         <HeaderTemplate>
                                             <thead>
-                                                <tr class="trSubTitulo">
-                                                    <th>ID</th>
+                                                <tr class="trSubTitulo">                                                    
                                                     <th>Nombres</th>
                                                     <th>Apellidos</th>
-                                                    <th>Telefono</th>
                                                     <th>Nro Doc</th>
                                                     <th>Email</th>
                                                     <th>Direccion</th>
                                                     <th>Ciudad</th>
                                                     <th>Pais</th>
+                                                    <th>Telefono</th>
                                                     <th>Codigo Postal</th>
                                                     <th>Editar</th>
                                                 </tr>
                                             </thead>
                                         </HeaderTemplate>
                                         <ItemTemplate>
-                                            <tr class="trSubTitulo_item uk-text-right uk-text-center@s">
-                                                <td data-label="ID" class="uk-text-center@s">
-                                                    <span class="Etiqueta">
-                                                        <asp:Label ID="lblCodigo" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "HuespedID") %>' />
-                                                    </span>
-                                                </td>
+                                            <tr class="trSubTitulo_item uk-text-right uk-text-center@s">                                               
                                                 <td data-label="Nombres">
                                                     <span class="Etiqueta">
-                                                        <asp:Label ID="Label9" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Nombre") %>' />
+                                                        <asp:Label ID="lblCodigo" runat="server" Visible="false" Text='<%# DataBinder.Eval(Container.DataItem, "HuespedID") %>' />
+                                                        <asp:Label ID="Label9" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Nombre") %>' />                                                        
                                                     </span>
                                                 </td>
                                                 <td data-label="Apellidos" class="uk-text-left@s">

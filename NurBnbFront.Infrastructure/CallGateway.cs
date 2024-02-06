@@ -11,6 +11,7 @@ using static NurBnbFront.Infrastructure.Conexion;
 using NurBnbFront.Infrastructure.Huesped.Dto;
 using System.Collections.ObjectModel;
 using System.Security.Policy;
+using NurBnbFront.Infrastructure.Propiedad.Dto;
 
 namespace NurBnbFront.Infrastructure
 {
@@ -41,8 +42,8 @@ namespace NurBnbFront.Infrastructure
                     //client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    if (token != null && token.jwt.Length > 0)
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
 
                     string url = ulrGateway + "api/Huesped/BuscarHuesped?searchTerm=" + nombres + "";
                     var response = await client.GetStringAsync(ulrGateway + "api/Huesped/BuscarHuesped?searchTerm="+ nombres +"");
@@ -118,5 +119,97 @@ namespace NurBnbFront.Infrastructure
 
             return result;
         }
+
+        public async Task<List<ListofPropiedadesDto>> ObtenerPropiedades(string nombres = "")
+        {
+            //List<ListofPropiedadesDto> propiedades;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+
+
+
+                    //client.DefaultRequestHeaders.Add("User-Agent", "C# App");
+                    //client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    //
+                    var response = await client.GetStringAsync(ulrGateway + "propiedad/ListaPropiedades");
+
+                    return JsonConvert.DeserializeObject<List<ListofPropiedadesDto>>(response);
+
+                   
+                    //if (response.IsSuccessStatusCode)
+                    //{
+                    //    huespedes =  await response.Content.ReadAsAsync<ICollection<HuespedDto>>();
+                    //    return huespedes;
+                    //}
+
+
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+            }
+
+            return null;
+        }
+
+        public async Task<string> RegistarPropiedad(string propietarioID, string titulo, decimal precio, string detalle,
+                                                 string ubicacion, string estado)
+        {
+            string result;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                   
+                    var data = new Dictionary<string, object>
+                    {
+                        { "propietarioID", propietarioID },
+                        { "titulo", titulo },
+                        { "precio", precio },
+                        { "detalle", detalle },
+                        { "ubicacion", ubicacion }
+                        
+
+                    };
+
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    var response = await client.PostAsJsonAsync(ulrGateway + "api/NurBNB/Propiedad", data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = response.Content.ReadAsStringAsync().Result;
+                        result = JsonConvert.DeserializeObject<string>(result);
+                    }
+                    else
+                        result = "";
+
+                    //tok = JsonConvert.DeserializeObject<Token>(payload);
+                    //token = tok.jwt;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
     }
 }

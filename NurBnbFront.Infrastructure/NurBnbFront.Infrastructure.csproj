@@ -72,6 +72,9 @@
     <Compile Include="Huesped\QueryHuesped.cs" />
     <Compile Include="InicioLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propiedad\Dto\ListofPropiedadesDto.cs" />
+    <Compile Include="Propiedad\QueryPropiedades.cs" />
+    <Compile Include="Propiedad\RegisterPropiedad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -285,6 +285,16 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"valido\": true,");
             sbMenu.Append("    \"mostrar\": false,");
             sbMenu.Append("    \"pantallaNueva\": \"Huesped.aspx\"");
+            sbMenu.Append("  },");
+            sbMenu.Append("  {");
+            sbMenu.Append("    \"idOpcion\": 5,");
+            sbMenu.Append("    \"textoOpcion\": \"Propiedades\",");
+            sbMenu.Append("    \"idOpcionPadre\": 3,");
+            sbMenu.Append("    \"pantalla\": \"Propiedad.aspx\",");
+            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
+            sbMenu.Append("    \"valido\": true,");
+            sbMenu.Append("    \"mostrar\": false,");
+            sbMenu.Append("    \"pantallaNueva\": \"Propiedad.aspx\"");
             sbMenu.Append("  }");
 
             sbMenu.Append("]");
