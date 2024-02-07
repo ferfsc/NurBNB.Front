@@ -263,7 +263,7 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
             sbMenu.Append("    \"valido\": true,");
             sbMenu.Append("    \"mostrar\": false,");
-            sbMenu.Append("    \"pantallaNueva\": \"frmSolicitudCompra.aspx\"");
+            sbMenu.Append("    \"pantallaNueva\": \"Reservas.aspx\"");
             sbMenu.Append("  },");
 
             sbMenu.Append("  {");

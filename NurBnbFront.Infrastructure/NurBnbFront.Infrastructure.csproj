@@ -75,6 +75,9 @@
     <Compile Include="Propiedad\Dto\ListofPropiedadesDto.cs" />
     <Compile Include="Propiedad\QueryPropiedades.cs" />
     <Compile Include="Propiedad\RegisterPropiedad.cs" />
+    <Compile Include="Reserva\Dto\ListOfReservaDto.cs" />
+    <Compile Include="Reserva\QueryReserva.cs" />
+    <Compile Include="Reserva\RegisterReserva.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -8,7 +8,7 @@ namespace NurBnbFront.Infrastructure.Huesped.Dto
 {
     public class HuespedDto
     {
-        public Guid HuespedID { get; set; }
+        public string HuespedID { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Telefono { get; set; }

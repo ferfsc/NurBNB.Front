@@ -21,6 +21,7 @@ namespace NurBnb.Front.Web
             if (!Page.IsPostBack)
             {
                 MostrarRegistro(true);
+                CargarPropietarios();
             }
         }
 
@@ -32,13 +33,8 @@ namespace NurBnb.Front.Web
             if (Mostrar)
             {
                 CargarPropiedades();
-            }
-            else
-            {
-                CargarPropietarios();
-                
-
-            }
+               
+            }            
         }
 
         private async void CargarPropiedades()
@@ -87,7 +83,7 @@ namespace NurBnb.Front.Web
 
                 var propiedad = ListofPropiedadesDtoList.Find(x => x.IDPropiedad.ToString() == Convert.ToString(e.CommandArgument));
 
-                Sesion.SeleccionarCombo(ref cmbPropietario, propiedad.PropietarioID.ToUpper()); 
+                Sesion.SeleccionarCombo(ref cmbPropietario, propiedad.PropietarioID); 
 
                 txtTitulo.Text = propiedad.Titulo;
                 txtPrecio.Text = propiedad.Precio.ToString();

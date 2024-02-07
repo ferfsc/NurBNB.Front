@@ -52,7 +52,7 @@ namespace NurBnb.Front.Web
             {
                 MostrarRegistro(false);
 
-                var _cliente = HuespedDtoList.Find(x => x.HuespedID.ToString() == Convert.ToString(e.CommandArgument));
+                var _cliente = HuespedDtoList.Find(x => x.HuespedID == Convert.ToString(e.CommandArgument));
 
                 txtNombres.Text = _cliente.Nombre;
                 txtApellidos.Text = _cliente.Apellidos;
