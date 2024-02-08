@@ -15,7 +15,7 @@ namespace NurBnbFront.Infrastructure.Reserva
 
         public Conexion.Token token { get; set; }
 
-        public async Task<List<ListOfReservaDto>> ObtenerReservas(string nombres = "")
+        public async Task<List<ListOfReservaDto>> ObtenerReservas( string nombres = "")
         {
 
             CallGateway _gateway = new CallGateway();

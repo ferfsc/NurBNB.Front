@@ -267,7 +267,28 @@ namespace NurBnb.Front.Web
             sbMenu.Append("  },");
 
             sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 3,");
+            sbMenu.Append("    \"idOpcion\": 10,");
+            sbMenu.Append("    \"textoOpcion\": \"Confirmar/Rechazar\",");
+            sbMenu.Append("    \"idOpcionPadre\": 0,");
+            sbMenu.Append("    \"pantalla\": \"#\",");
+            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
+            sbMenu.Append("    \"valido\": true,");
+            sbMenu.Append("    \"mostrar\": false,");
+            sbMenu.Append("    \"pantallaNueva\": \"#\"");
+            sbMenu.Append("  },");
+            sbMenu.Append("  {");
+            sbMenu.Append("    \"idOpcion\": 11,");
+            sbMenu.Append("    \"textoOpcion\": \"Confirmar/Rechazar\",");
+            sbMenu.Append("    \"idOpcionPadre\": 10,");
+            sbMenu.Append("    \"pantalla\": \"Reservas.aspx\",");
+            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
+            sbMenu.Append("    \"valido\": true,");
+            sbMenu.Append("    \"mostrar\": false,");
+            sbMenu.Append("    \"pantallaNueva\": \"Cancelar.aspx\"");
+            sbMenu.Append("  },");
+
+            sbMenu.Append("  {");
+            sbMenu.Append("    \"idOpcion\": 30,");
             sbMenu.Append("    \"textoOpcion\": \"Administracion\",");
             sbMenu.Append("    \"idOpcionPadre\": 0,");
             sbMenu.Append("    \"pantalla\": \"#\",");
@@ -277,9 +298,9 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"pantallaNueva\": \"#\"");
             sbMenu.Append("  },");
             sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 4,");
+            sbMenu.Append("    \"idOpcion\": 31,");
             sbMenu.Append("    \"textoOpcion\": \"Huespedes\",");
-            sbMenu.Append("    \"idOpcionPadre\": 3,");
+            sbMenu.Append("    \"idOpcionPadre\": 30,");
             sbMenu.Append("    \"pantalla\": \"Huesped.aspx\",");
             sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
             sbMenu.Append("    \"valido\": true,");
@@ -287,9 +308,9 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"pantallaNueva\": \"Huesped.aspx\"");
             sbMenu.Append("  },");
             sbMenu.Append("  {");
-            sbMenu.Append("    \"idOpcion\": 5,");
+            sbMenu.Append("    \"idOpcion\": 32,");
             sbMenu.Append("    \"textoOpcion\": \"Propiedades\",");
-            sbMenu.Append("    \"idOpcionPadre\": 3,");
+            sbMenu.Append("    \"idOpcionPadre\": 30,");
             sbMenu.Append("    \"pantalla\": \"Propiedad.aspx\",");
             sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
             sbMenu.Append("    \"valido\": true,");

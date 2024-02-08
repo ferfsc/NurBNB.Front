@@ -13,6 +13,7 @@ using System.Collections.ObjectModel;
 using System.Security.Policy;
 using NurBnbFront.Infrastructure.Propiedad.Dto;
 using NurBnbFront.Infrastructure.Reserva.Dto;
+using NurBnbFront.Infrastructure.Reserva;
 
 namespace NurBnbFront.Infrastructure
 {
@@ -212,7 +213,7 @@ namespace NurBnbFront.Infrastructure
         }
 
 
-        public async Task<List<ListOfReservaDto>> ObtenerReservas(string nombres = "")
+        public async Task<List<ListOfReservaDto>> ObtenerReservas(string tipoEstado="")
         {
             //List<ListofPropiedadesDto> propiedades;
             try
@@ -231,7 +232,12 @@ namespace NurBnbFront.Infrastructure
                     //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
 
                     //
-                    var response = await client.GetStringAsync(ulrGateway + "Reserva/ListaReservas");
+
+                    string url = ulrGateway + "Reserva/ListaReservas";
+                    if (!string.IsNullOrEmpty(tipoEstado))
+                        url = url + $"?tipoEstadoReserva={tipoEstado}";
+
+                    var response = await client.GetStringAsync(url);
 
                     return JsonConvert.DeserializeObject<List<ListOfReservaDto>>(response);
 
@@ -281,6 +287,92 @@ namespace NurBnbFront.Infrastructure
                     //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
 
                     var response = await client.PostAsJsonAsync(ulrGateway + "NurBNB/Reserva", data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = response.Content.ReadAsStringAsync().Result;
+                        result = JsonConvert.DeserializeObject<string>(result);
+                    }
+                    else
+                        result = "";
+
+                    //tok = JsonConvert.DeserializeObject<Token>(payload);
+                    //token = tok.jwt;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        public async Task<string> ConfirmarReserva(string reservaID)
+        {
+            string result;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+
+                    var data = new Dictionary<string, object>
+                    {
+                        { "reservaID", reservaID }
+                    };
+
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    var response = await client.PostAsJsonAsync(ulrGateway + "NurBNB/Reserva/ConfirmarReserva", data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = response.Content.ReadAsStringAsync().Result;
+                        result = JsonConvert.DeserializeObject<string>(result);
+                    }
+                    else
+                        result = "";
+
+                    //tok = JsonConvert.DeserializeObject<Token>(payload);
+                    //token = tok.jwt;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        public async Task<string> RechazarReserva(string reservaID)
+        {
+            string result;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+
+                    var data = new Dictionary<string, object>
+                    {
+                        { "reservaID", reservaID }
+                    };
+
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    var response = await client.PostAsJsonAsync(ulrGateway + "NurBNB/Reserva/RechazarReserva", data);
 
                     if (response.IsSuccessStatusCode)
                     {

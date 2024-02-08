@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" CodeBehind="Cancelar.aspx.cs" Inherits="NurBnb.Front.Web.Cancelar" %>
+﻿<%@ Page Async="true" Title="" Language="C#" MasterPageFile="~/Index.Master" AutoEventWireup="true" CodeBehind="Cancelar.aspx.cs" Inherits="NurBnb.Front.Web.Cancelar" %>
 
 <%@ Register Src="~/Controles/MensajeAlertas.ascx" TagPrefix="ucMS" TagName="ucMS" %>
 
@@ -81,23 +81,23 @@
                                                         <asp:Label ID="lblCodigo" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Cliente") %>' />
                                                     </span>
                                                 </td>
-                                                <td data-label="Propiedad">
+                                                <td data-label="Propiedad" class="uk-text-left@s">
                                                     <span class="Etiqueta">
                                                         <asp:Label ID="Label9" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Titulo") %>' />
                                                     </span>
                                                 </td>
                                                 <td data-label="Fecha Inicio" class="uk-text-center@s">
                                                     <span class="Etiqueta">
-                                                        <asp:Label ID="lblNombres" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "FechaCheckin") %>' />
+                                                        <asp:Label ID="lblNombres" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "FechaCheckin", "{0:dd/MM/yyyy}") %>' />
                                                     </span>
                                                 </td>
                                                 <td data-label="Fecha Fin" class="uk-text-center@s">
                                                     <span class="Etiqueta">
-                                                        <asp:Label ID="Label4" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "FechaCheckOut") %>' />
+                                                        <asp:Label ID="Label4" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "FechaCheckOut", "{0:dd/MM/yyyy}") %>' />
                                                         <asp:Label ID="Label7" runat="server" Visible="false" Text='<%# DataBinder.Eval(Container.DataItem, "IDReserva") %>' />
                                                     </span>
                                                 </td>
-                                                <td data-label="Motivo" class="uk-text-center@s">
+                                                <td data-label="Motivo" class="uk-text-left@s">
                                                     <span class="Etiqueta">
                                                         <asp:Label ID="Label10" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Motivo") %>' />
                                                     </span>
