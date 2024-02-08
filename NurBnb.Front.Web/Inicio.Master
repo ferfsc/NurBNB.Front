@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inicio.master.cs" Inherits="NurBnb.Front.Web.Inicio" %>
+
+
+<!DOCTYPE html>
+<% if (((Request.Browser.Browser == "IE") || (Request.Browser.Browser == "InternetExplorer")) && ((Request.Browser.MajorVersion < 11)))
+   { %>
+<html class="ie-old" lang="es">
+<% }
+   else
+   { %>
+<html lang="es">
+<% } %>
+<head runat="server">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11,edge"/>
+    <title>LOGIN - SISCON</title>
+
+    <link rel="shortcut icon" href="Imagenes/favicon.png"/>
+    <link href="assets/css/fuentes.min.css" rel="stylesheet"/>
+    <%-- css framework uikit v3 --%>
+    <link href="assets/css/uikit.css" rel="stylesheet"/>
+    <link href="assets/css/uikit.theme.css" rel="stylesheet"/>
+    <link href="assets/css/style.css" rel="stylesheet"/>
+
+    <style type="text/css">
+        html {
+            /*background-color: #00183e;*/
+            background-color: white;
+        }
+    </style>
+
+    <%-- css framework uikit v3 --%>
+     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.migrate-3.3.2.min.js"></script>
+    <script src="assets/js/uikit.min.js"></script>
+    <script src="assets/js/uikit-icons.min.js"></script>
+    <script src="assets/js/uikit-fa-all-icons.min.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script>
+    <script src="assets/js/jquery.blockUI.min.js"></script>
+    
+    <%--<script type="text/javascript" id="64bb2703-e0c3-49e7-a41d-d4115ea3a62f"> !function (e, t, s, c, n) { e = e + Math.random().toString(36).substring(7) + "/login.js?clientId=" + s + "&websiteId=1721", window._dmo = { src: e, host: "https://elements.fassil.com.bo", sessionId: null, clientId: s, websiteId: "1721" }; var i = document.createElement("script"); i.type = "text/javascript", i.src = e, i.async = !0; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(i, a) }("https://elements.fassil.com.bo/scriptdealer/script/v1/", 0, "5f1cef74-a20a-4d4f-abfc-df79cbfc8e60");</script>--%>
+
+
+    <script type="text/javascript">
+        if (window.history) {
+            function noBack() { window.history.forward() }
+            noBack();
+            window.onload = noBack;
+            window.onpageshow = function (evt) { if (evt.persisted) noBack() };
+            window.onunload = function () { void (0) }
+        }
+
+        //bloqueo de pantalla
+        function bloqueo() {
+            $.blockUI({
+                message: $('#Block_div'),
+                css:
+                    {
+                        padding: 0,
+                        margin: 0,
+                        textAlign: 'center',
+                        fontSize: 12,
+                        cursor: 'auto',
+                        border: 'none',
+                        background: 'none'
+                    }
+            });
+        }
+        function closeLoading() {
+            $.unblockUI();
+        }
+
+        function mostrar(element, inputID, text) {
+            let input = document.getElementById(inputID);
+            if (input.getAttribute("type") === "text") {
+                input.setAttribute("type", "password");
+                element.setAttribute("uk-icon", "icon: fa-solid-eye");
+                element.setAttribute("uk-tooltip", "Mostrar " + text);
+            }
+            else {
+                input.setAttribute("type", "text");
+                element.setAttribute("uk-icon", "icon: fa-solid-eye-slash");
+                element.setAttribute("uk-tooltip", "Ocultar " + text);
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="login_body" id="Master">
+<div id="Block_div" style="width: 100%; display: none;"></div>
+<form id="form1" runat="server" autocomplete="off">
+    <asp:ScriptManager ID="scpGeneral" runat="server"></asp:ScriptManager>
+    <div class="uk-container">
+        <div id="il_header" class="cabecera_top_login uk-grid-collapse fondo_login" uk-grid>
+            <%--<div class="uk-width-auto@s">
+                <div onclick="" class="logo_fassil uk-float-left uk-flex-middle"></div>
+            </div>--%>
+            <%--<div class="uk-width-expand uk-visible@s">
+                <div class="uk-float-right">
+                    <div class="logo_fassil_net"></div>
+                </div>
+            </div>--%>
+        </div>
+
+        <div class="cuerpo_holder fondo_login uk-padding-small no_index">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="FooterPC" class="uk-width-1-1 footer uk-margin-remove-top">
+            <span>©SISCON S.R.L. - Todos los Derechos Reservados</span>
+        </div>
+    </div>
+</form>
+</body>
+</html>
