@@ -44,6 +44,9 @@
       <HintPath>packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,11 +65,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="assets\css\dataTables.uikit.css" />
     <Content Include="assets\css\fuentes.min.css" />
     <Content Include="assets\css\metismenujs.css" />
@@ -77,6 +75,7 @@
     <Content Include="assets\css\uikit.css" />
     <Content Include="assets\css\uikit.theme.css" />
     <Content Include="assets\favicon.png" />
+    <Content Include="assets\img\banner.png" />
     <Content Include="assets\img\img404.png" />
     <Content Include="assets\js\datatables.min.js" />
     <Content Include="assets\js\dataTables.uikit.js" />
@@ -155,8 +154,45 @@
     <Content Include="assets\js\uikit-icons.min.js" />
     <Content Include="assets\js\uikit.min.js" />
     <Content Include="assets\js\vanilla-masker.min.js" />
+    <Content Include="Cancelar.aspx" />
     <Content Include="Controles\MensajeAlertas.ascx" />
+    <Content Include="Huesped.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="packages\log4net.2.0.15\lib\net20\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net20\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net35\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net35\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net40-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net40-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net40\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net40\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net45\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net45\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard1.3\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard1.3\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard2.0\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard2.0\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\package-icon.png" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net6.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\net6.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\netstandard1.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\netstandard1.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\netstandard1.3\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\netstandard1.3\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\lib\netstandard2.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\packageIcon.png" />
+    <Content Include="Principal.aspx" />
+    <Content Include="Propiedad.aspx" />
+    <Content Include="Reservas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -164,12 +200,33 @@
     <Compile Include="AppCode\Utils.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Cancelar.aspx.cs">
+      <DependentUpon>Cancelar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cancelar.aspx.designer.cs">
+      <DependentUpon>Cancelar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controles\MensajeAlertas.ascx.cs">
       <DependentUpon>MensajeAlertas.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controles\MensajeAlertas.ascx.designer.cs">
       <DependentUpon>MensajeAlertas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Huesped.aspx.cs">
+      <DependentUpon>Huesped.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Huesped.aspx.designer.cs">
+      <DependentUpon>Huesped.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.Master.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.Master.designer.cs">
+      <DependentUpon>Index.Master</DependentUpon>
     </Compile>
     <Compile Include="Inicio.Master.cs">
       <DependentUpon>Inicio.Master</DependentUpon>
@@ -185,19 +242,48 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propiedad.aspx.cs">
+      <DependentUpon>Propiedad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Propiedad.aspx.designer.cs">
+      <DependentUpon>Propiedad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas.aspx.cs">
+      <DependentUpon>Reservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservas.aspx.designer.cs">
+      <DependentUpon>Reservas.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Inicio.Master" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\NurBnbFront.Infrastructure\NurBnbFront.Infrastructure.csproj">
+    <Content Include="Index.Master" />
+    <Content Include="Menu.json" />
+    <None Include="packages.config" />
+    <Content Include="packages\log4net.2.0.15\.signature.p7s" />
+    <Content Include="packages\log4net.2.0.15\log4net.2.0.15.nupkg" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\.signature.p7s" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\LICENSE.md" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\Newtonsoft.Json.13.0.3.nupkg" />
+    <Content Include="packages\Newtonsoft.Json.13.0.3\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NurBnbFront.Infrastructure\NurBnbFront.Infrastructure.csproj">
       <Project>{ed126b80-de3e-46e5-b560-3c2e517a44ca}</Project>
       <Name>NurBnbFront.Infrastructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

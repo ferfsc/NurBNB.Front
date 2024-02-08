@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurBnb.Front.Web", "NurBnb.Front.Web.csproj", "{22DB0348-CA6D-4F7F-82A1-78480D7BBCAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurBnbFront.Infrastructure", "..\..\NurBnbFront.Infrastructure\NurBnbFront.Infrastructure.csproj", "{ED126B80-DE3E-46E5-B560-3C2E517A44CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NurBnbFront.Infrastructure", "..\NurBnbFront.Infrastructure\NurBnbFront.Infrastructure.csproj", "{ED126B80-DE3E-46E5-B560-3C2E517A44CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

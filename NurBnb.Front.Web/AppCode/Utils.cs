@@ -5,6 +5,12 @@ using System.Net.NetworkInformation;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Web.UI;
+using Newtonsoft.Json.Linq;
+using System.Runtime.Remoting.Messaging;
+using Newtonsoft.Json;
+using System.IO;
+using System.Configuration;
+using System.Text;
 
 namespace NurBnb.Front.Web.AppCode
 {
@@ -123,5 +129,52 @@ namespace NurBnb.Front.Web.AppCode
                     CleanControl(control.Controls);
             }
         }
-    }
+
+        public static JObject Lenguaje(string valor)
+        {
+            JObject languaje;
+            string path = ""; //ConfigurationManager.AppSettings["rutaWebConfig"];
+            path = Path.Combine(path, "Menu.json");            
+            languaje = JObject.Parse(File.ReadAllText(path, Encoding.UTF8));
+            return (JObject)(languaje[valor] ?? new JObject());
+        }
+
+        public static void FillCombo<TSource>(ref DropDownList ddl, TSource dataSource, string textField, string valueField) 
+        {
+
+            ddl.DataValueField = valueField;
+            ddl.DataTextField = textField;
+            ddl.DataSource = dataSource;
+            ddl.DataBind();
+
+            ddl.Items.Insert(0, new ListItem("Seleccionar", "0"));
+
+        }
+
+        public static void SeleccionarCombo(ref DropDownList pCmbCombo, string pStrValue = "", string pStrText = "")
+        {
+            if (pStrText != "")
+            {
+                if (pCmbCombo.Items.FindByText(pStrText) == null)
+                    return;
+                pCmbCombo.SelectedItem.Selected = false;
+                pCmbCombo.Items.FindByText(pStrText).Selected = true;
+            }
+            else
+            {
+                if (pStrValue != "")
+                {
+                    if (pCmbCombo.Items.FindByValue(pStrValue) == null)
+                        return;
+                    pCmbCombo.SelectedItem.Selected = false;
+                    pCmbCombo.Items.FindByValue(pStrValue).Selected = true;
+                }
+                else
+                {
+                    if (pCmbCombo.Items.Count > 0)
+                        pCmbCombo.Items[0].Selected = true;
+                }
+            }
+        }
+    }       
 }

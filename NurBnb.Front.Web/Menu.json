@@ -1,0 +1,242 @@
+[
+  {
+    "idOpcion": 1,
+    "textoOpcion": "Solicitud",
+    "idOpcionPadre": 0,
+    "pantalla": "#",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "#"
+  },
+  {
+    "idOpcion": 2,
+    "textoOpcion": "Solicitud de Compra",
+    "idOpcionPadre": 1,
+    "pantalla": "frmSolicitudCompra.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmSolicitudCompra.aspx"
+  },
+  {
+    "idOpcion": 3,
+    "textoOpcion": "Autorizar",
+    "idOpcionPadre": 0,
+    "pantalla": "#",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "#"
+  },
+  {
+    "idOpcion": 4,
+    "textoOpcion": "Autorizar Solicitud",
+    "idOpcionPadre": 3,
+    "pantalla": "AutorizarSolicitud.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "AutorizarSolicitud.aspx"
+  },
+  {
+    "idOpcion": 5,
+    "textoOpcion": "Parametros",
+    "idOpcionPadre": 0,
+    "pantalla": "#",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "#"
+  },
+  {
+    "idOpcion": 6,
+    "textoOpcion": "Proyectos",
+    "idOpcionPadre": 5,
+    "pantalla": "frmBusquedaProyecto.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmBusquedaProyecto.aspx"
+  },
+  {
+    "idOpcion": 8,
+    "textoOpcion": "Unidad",
+    "idOpcionPadre": 5,
+    "pantalla": "frmUnidad.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmUnidad.aspx"
+  },
+  {
+    "idOpcion": 9,
+    "textoOpcion": "Material",
+    "idOpcionPadre": 5,
+    "pantalla": "frmProyecto_Material.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmProyecto_Material.aspx"
+  },
+  {
+    "idOpcion": 11,
+    "textoOpcion": "Administracion",
+    "idOpcionPadre": 0,
+    "pantalla": "#",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "#"
+  },
+  {
+    "idOpcion": 12,
+    "textoOpcion": "Personal",
+    "idOpcionPadre": 11,
+    "pantalla": "frmPersonal.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmPersonal.aspx"
+  },
+  {
+    "idOpcion": 13,
+    "textoOpcion": "Cargo",
+    "idOpcionPadre": 11,
+    "pantalla": "frmCargo.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmCargo.aspx"
+  },
+  {
+    "idOpcion": 14,
+    "textoOpcion": "Area",
+    "idOpcionPadre": 11,
+    "pantalla": "frmArea.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmArea.aspx"
+  },
+  {
+    "idOpcion": 15,
+    "textoOpcion": "Usuario",
+    "idOpcionPadre": 11,
+    "pantalla": "frmUsuarios.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmUsuarios.aspx"
+  },
+  {
+    "idOpcion": 16,
+    "textoOpcion": "Reportes",
+    "idOpcionPadre": 11,
+    "pantalla": "..\/Reportes\/Reporte.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "..\/Reportes\/Reporte.aspx"
+  },
+  {
+    "idOpcion": 17,
+    "textoOpcion": "Opcion Menu",
+    "idOpcionPadre": 11,
+    "pantalla": "frmOpcion.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmOpcion.aspx"
+  },
+  {
+    "idOpcion": 18,
+    "textoOpcion": "Asignar Menu",
+    "idOpcionPadre": 11,
+    "pantalla": "frmUsuarioOpcion.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmUsuarioOpcion.aspx"
+  },
+  {
+    "idOpcion": 19,
+    "textoOpcion": "Fases",
+    "idOpcionPadre": 5,
+    "pantalla": "Fases.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "Fases.aspx"
+  },
+  {
+    "idOpcion": 20,
+    "textoOpcion": "Grupos",
+    "idOpcionPadre": 5,
+    "pantalla": "frmGrupo.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmGrupo.aspx"
+  },
+  {
+    "idOpcion": 21,
+    "textoOpcion": "Modulo",
+    "idOpcionPadre": 5,
+    "pantalla": "frmModulo.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmModulo.aspx"
+  },
+  {
+    "idOpcion": 22,
+    "textoOpcion": "Almacen",
+    "idOpcionPadre": 0,
+    "pantalla": "#",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "#"
+  },
+  {
+    "idOpcion": 23,
+    "textoOpcion": "Registro de Almacen",
+    "idOpcionPadre": 22,
+    "pantalla": "frmAlmacen.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "frmAlmacen.aspx"
+  },
+  {
+    "idOpcion": 24,
+    "textoOpcion": "Ingresos Almacen",
+    "idOpcionPadre": 22,
+    "pantalla": "IngresoMaterial.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "IngresoMaterial.aspx"
+  },
+  {
+    "idOpcion": 25,
+    "textoOpcion": "Traspaso de Almacen",
+    "idOpcionPadre": 22,
+    "pantalla": "TraspasoAlmacen.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "TraspasoAlmacen.aspx"
+  },
+  {
+    "idOpcion": 26,
+    "textoOpcion": "Salida de Almacen",
+    "idOpcionPadre": 22,
+    "pantalla": "SalidasAlmacen.aspx",
+    "imagen1": "grupoOver.gif",
+    "valido": true,
+    "mostrar": false,
+    "pantallaNueva": "SalidasAlmacen.aspx"
+  }
+]
