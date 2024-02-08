@@ -154,6 +154,7 @@
     <Content Include="assets\js\uikit-icons.min.js" />
     <Content Include="assets\js\uikit.min.js" />
     <Content Include="assets\js\vanilla-masker.min.js" />
+    <Content Include="Cancelar.aspx" />
     <Content Include="Controles\MensajeAlertas.ascx" />
     <Content Include="Huesped.aspx" />
     <Content Include="Login.aspx" />
@@ -198,6 +199,13 @@
     <Compile Include="AppCode\Sesion.cs" />
     <Compile Include="AppCode\Utils.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cancelar.aspx.cs">
+      <DependentUpon>Cancelar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cancelar.aspx.designer.cs">
+      <DependentUpon>Cancelar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controles\MensajeAlertas.ascx.cs">
       <DependentUpon>MensajeAlertas.ascx</DependentUpon>

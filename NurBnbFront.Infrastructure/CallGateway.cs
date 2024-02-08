@@ -122,8 +122,7 @@ namespace NurBnbFront.Infrastructure
         }
 
         public async Task<List<ListofPropiedadesDto>> ObtenerPropiedades(string nombres = "")
-        {
-            //List<ListofPropiedadesDto> propiedades;
+        {            
             try
             {
                 using (var client = new HttpClient())
