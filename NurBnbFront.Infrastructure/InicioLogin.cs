@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿//using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace NurBnbFront.Infrastructure
 {
     public class InicioLogin
     {
-        private readonly IMemoryCache _memory;
+       //private readonly IMemoryCache _memory;
         public Conexion.Token token { get; set; }
         
         public string Nombre { get; set; }

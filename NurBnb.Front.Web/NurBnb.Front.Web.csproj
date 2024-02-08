@@ -154,6 +154,8 @@
     <Content Include="assets\js\uikit-icons.min.js" />
     <Content Include="assets\js\uikit.min.js" />
     <Content Include="assets\js\vanilla-masker.min.js" />
+    <Content Include="CatalogoDevolucion.aspx" />
+    <Content Include="CatalogoPago.aspx" />
     <Content Include="Controles\MensajeAlertas.ascx" />
     <Content Include="Huesped.aspx" />
     <Content Include="Login.aspx" />
@@ -166,6 +168,20 @@
     <Compile Include="AppCode\Sesion.cs" />
     <Compile Include="AppCode\Utils.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatalogoDevolucion.aspx.cs">
+      <DependentUpon>CatalogoDevolucion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatalogoDevolucion.aspx.designer.cs">
+      <DependentUpon>CatalogoDevolucion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CatalogoPago.aspx.cs">
+      <DependentUpon>CatalogoPago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CatalogoPago.aspx.designer.cs">
+      <DependentUpon>CatalogoPago.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controles\MensajeAlertas.ascx.cs">
       <DependentUpon>MensajeAlertas.ascx</DependentUpon>

@@ -70,7 +70,7 @@ namespace NurBnb.Front.Web
                 InicioLogin objLogin = new InicioLogin();
                 
                 //Conexion.Token token = await objLogin.InicioSession(txtUsuario.Text, txtPassword.Text);
-                Conexion.Token token = await objLogin.InicioSession("admin@fake.com", "admin@123");
+                Conexion.Token token = await objLogin.InicioSession("admin@fake.com", "Admin123*");
 
                 if (token != null && token.jwt != null && token.jwt.Length > 0)
                 {

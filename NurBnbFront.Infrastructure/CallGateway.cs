@@ -13,6 +13,7 @@ using System.Collections.ObjectModel;
 using System.Security.Policy;
 using NurBnbFront.Infrastructure.Propiedad.Dto;
 using NurBnbFront.Infrastructure.Reserva.Dto;
+using NurBnbFront.Infrastructure.Pago.Dto;
 
 namespace NurBnbFront.Infrastructure
 {
@@ -304,5 +305,178 @@ namespace NurBnbFront.Infrastructure
             return result;
         }
 
+        public async Task<List<CatalogoPagoDto>> ObtenerCatalogoPago(string search = "")
+        {
+            //List<ListofPropiedadesDto> propiedades;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+
+
+
+                    //client.DefaultRequestHeaders.Add("User-Agent", "C# App");
+                    //client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    //
+                    var response = await client.GetStringAsync(ulrGateway + "api/CatalogoPago");
+
+                    return JsonConvert.DeserializeObject<List<CatalogoPagoDto>>(response);
+
+
+                    //if (response.IsSuccessStatusCode)
+                    //{
+                    //    huespedes =  await response.Content.ReadAsAsync<ICollection<HuespedDto>>();
+                    //    return huespedes;
+                    //}
+
+
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+            }
+
+            return null;
+        }
+
+        public async Task<string> RegistarCatalogoPago(string descripcion, int porcentaje, int tipo)
+                                                        {
+            string result;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+
+                    var data = new Dictionary<string, object>
+                    {
+                        { "tipo", tipo },
+                        { "descripcion", descripcion },
+                        { "porcentaje", porcentaje }
+
+                    };
+
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    var response = await client.PostAsJsonAsync(ulrGateway + "api/CatalogoPago", data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = response.Content.ReadAsStringAsync().Result;
+                        result = JsonConvert.DeserializeObject<string>(result);
+                    }
+                    else
+                        result = "";
+
+                    //tok = JsonConvert.DeserializeObject<Token>(payload);
+                    //token = tok.jwt;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+                result = string.Empty;
+            }
+
+            return result;
+        }
+
+        public async Task<List<CatalogoDevolucionDto>> ObtenerCatalogoDevolucion(string search = "")
+        {
+            //List<ListofPropiedadesDto> propiedades;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Accept.Clear();
+
+
+
+                    //client.DefaultRequestHeaders.Add("User-Agent", "C# App");
+                    //client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json; charset=utf-8");
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    //
+                    var response = await client.GetStringAsync(ulrGateway + "api/CatalogoDevolucion");
+
+                    return JsonConvert.DeserializeObject<List<CatalogoDevolucionDto>>(response);
+
+
+                    //if (response.IsSuccessStatusCode)
+                    //{
+                    //    huespedes =  await response.Content.ReadAsAsync<ICollection<HuespedDto>>();
+                    //    return huespedes;
+                    //}
+
+
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+            }
+
+            return null;
+        }
+
+        public async Task<string> RegistarCatalogoDevolucion(string descripcion, int porcentaje, int nroDias)
+        {
+            string result;
+            try
+            {
+                using (var client = new HttpClient())
+                {
+
+                    var data = new Dictionary<string, object>
+                    {
+                        { "nroDias", nroDias },
+                        { "descripcion", descripcion },
+                        { "porcentajeDescuento", porcentaje }
+
+                    };
+
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    //if (token != null && token.jwt.Length > 0)
+                    //    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token.jwt);
+
+                    var response = await client.PostAsJsonAsync(ulrGateway + "api/CatalogoDevolucion", data);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        result = response.Content.ReadAsStringAsync().Result;
+                        result = JsonConvert.DeserializeObject<string>(result);
+                    }
+                    else
+                        result = "";
+
+                    //tok = JsonConvert.DeserializeObject<Token>(payload);
+                    //token = tok.jwt;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                string error = ex.Message;
+                result = string.Empty;
+            }
+
+            return result;
+        }
     }
 }
