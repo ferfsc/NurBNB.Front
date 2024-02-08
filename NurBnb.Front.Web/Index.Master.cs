@@ -316,6 +316,37 @@ namespace NurBnb.Front.Web
             sbMenu.Append("    \"valido\": true,");
             sbMenu.Append("    \"mostrar\": false,");
             sbMenu.Append("    \"pantallaNueva\": \"Propiedad.aspx\"");
+            sbMenu.Append("  },");
+
+            sbMenu.Append("  {");
+            sbMenu.Append("    \"idOpcion\": 6,");
+            sbMenu.Append("    \"textoOpcion\": \"Configuracion\",");
+            sbMenu.Append("    \"idOpcionPadre\": 0,");
+            sbMenu.Append("    \"pantalla\": \"#\",");
+            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
+            sbMenu.Append("    \"valido\": true,");
+            sbMenu.Append("    \"mostrar\": false,");
+            sbMenu.Append("    \"pantallaNueva\": \"#\"");
+            sbMenu.Append("  },");
+            sbMenu.Append("  {");
+            sbMenu.Append("    \"idOpcion\": 7,");
+            sbMenu.Append("    \"textoOpcion\": \"Catalogo de Pago\",");
+            sbMenu.Append("    \"idOpcionPadre\": 6,");
+            sbMenu.Append("    \"pantalla\": \"CatalogoPago.aspx\",");
+            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
+            sbMenu.Append("    \"valido\": true,");
+            sbMenu.Append("    \"mostrar\": false,");
+            sbMenu.Append("    \"pantallaNueva\": \"CatalogoPago.aspx\"");
+            sbMenu.Append("  },");
+            sbMenu.Append("  {");
+            sbMenu.Append("    \"idOpcion\": 8,");
+            sbMenu.Append("    \"textoOpcion\": \"Catalogo de Devoluciones\",");
+            sbMenu.Append("    \"idOpcionPadre\": 6,");
+            sbMenu.Append("    \"pantalla\": \"CatalogoDevolucion.aspx\",");
+            sbMenu.Append("    \"imagen1\": \"grupoOver.gif\",");
+            sbMenu.Append("    \"valido\": true,");
+            sbMenu.Append("    \"mostrar\": false,");
+            sbMenu.Append("    \"pantallaNueva\": \"CatalogoDevolucion.aspx\"");
             sbMenu.Append("  }");
 
             sbMenu.Append("]");

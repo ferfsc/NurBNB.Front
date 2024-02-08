@@ -65,6 +65,12 @@
     <Compile Include="Huesped\RegisterHuesped.cs" />
     <Compile Include="Huesped\QueryHuesped.cs" />
     <Compile Include="InicioLogin.cs" />
+    <Compile Include="Pago\Dto\CatalogoDevolucionDto.cs" />
+    <Compile Include="Pago\Dto\CatalogoPagoDto.cs" />
+    <Compile Include="Pago\QueryCatalogoDevolucion.cs" />
+    <Compile Include="Pago\QueryCatalogoPago.cs" />
+    <Compile Include="Pago\RegisterCatalogoDevolucion.cs" />
+    <Compile Include="Pago\RegisterCatalogoPago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Propiedad\Dto\ListofPropiedadesDto.cs" />
     <Compile Include="Propiedad\QueryPropiedades.cs" />
